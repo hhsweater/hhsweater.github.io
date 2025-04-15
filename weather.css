@@ -35,6 +35,44 @@
 		#longDesc.changed{
 			visibility: hidden;
 		}
+		#getLoLa{
+			opacity:1;
+			display: inline;
+		}
+		#getLoLa.changed{
+			visibility: hidden;
+		}
+		#country{
+			color:#2d5986;
+		}
+		#name{
+			color:#2d5986;
+		}
+		#temp{
+			color:#336699;
+		}
+		#feelsLike{
+			color:#3973ac;
+		}
+		#weatherMain{
+			color:#3366cc;
+		}
+		#weatherDesc{
+			color:#4775d1;
+		}
+		#pressure{
+			color:#336699;
+		}
+		#humidity{
+			color:#336699;
+		}
+		#report{
+			color:#2d5986;
+		}
+
+		.italy{
+			font-style: italic;
+		}
 		.container{
 			display: grid;
 			grid-template-areas:
@@ -63,40 +101,13 @@
 		article{
 			text-align:center;
 			columns:1;
-			padding:1em;
+			padding:0.72em;
 			background-image: url(assets/starback.gif);
-			background-size: 500px 75px;
+			background-size: 500px 100px;
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
 
-		.nav{
-			display:flex;
-			flex-direction:row;
-			padding-bottom:.3em;
-			font-size:1em;
-			background-image: url(assets/gif/clouds-scroll-horizontal.gif);
-			background-size:cover;
-			flex:1;
-			opacity: 0.69;
-		  }
-		  .nav:hover {
-      opacity: 1.0;
-      }
-		.navlink{
-			display:flex;
-			justify-content: center;
-			color:#000066;
-			background-color:#ccccff;
-			text-decoration:none;
-			margin:1em;
-			padding-left:1em;
-			padding-right:1em;
-			padding-top:.5em;
-			padding-bottom:.5em;
-			border:5px solid #6666ff;
-			border-radius:1px;
-		}
 
 		header{
 			background-image: linear-gradient(to bottom, #66ccff, #ccffff);
@@ -108,9 +119,9 @@
 		footer{
 			background-image: linear-gradient(to top, #66a3ff, #99ccff);
 			text-align:center;
-			font-size:1.2em;
+			font-size:1.18em;
 			font-style:bold;
-			padding: 25em, 25em, 25em, 25em;
+			padding: 10em, 25em, 10em, 25em;
 			border: 5px outset grey;
 		}
 		h1{
@@ -126,7 +137,7 @@
 		}
 		h3{
 			text-align:center;
-			color: lightblue;
+			color: #ccffff;
 		}
 
     .journalHdr{
@@ -142,9 +153,6 @@
  			     }
 		}
 
-		.imgNeo{
-		  padding:5px,1em,5px,1em;
-		}
     a:link, a:visited {
     color: blue;
     text-decoration: none;
