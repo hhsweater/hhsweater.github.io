@@ -1,5 +1,15 @@
 //LOTS OF CHANGESTYLES BELOW
 
+function changeStyleLoLaButt() {//changestyle to hide button after press
+  let myButt = document.getElementById('getLoLa');
+  if(myButt.hasAttribute('class')) {
+    myButt.removeAttribute('class');
+}
+else{
+  myButt.setAttribute('class', 'changed');
+  }//end else
+}//end button changestyle
+
 function changeStyleLatDesc() {//changestyle to hide button after press
   let myButt = document.getElementById('latDesc');
   if(myButt.hasAttribute('class')) {
@@ -97,6 +107,7 @@ function toggleShow() {//toggle descriptions
           document.getElementById("latter").innerHTML = position.coords.latitude;
           document.getElementById("longer").innerHTML = position.coords.longitude;
           changeStyleDisclaimer();
+          changeStyleLoLaButt();
           changeStyleLoading();
           changeStyleLatDesc();
           changeStyleLongDesc();
@@ -134,6 +145,7 @@ console.log(url);
   let prssr = "";
   let humid = "";
   let flslk = "";
+  let reprt = "";
   let theSpan = document.getElementById('output');
   let weatherMain = document.getElementById('weatherMain');
   let weatherDesc = document.getElementById('weatherDesc');
@@ -143,6 +155,7 @@ console.log(url);
   let mainHumid = document.getElementById('humidity');
   let name = document.getElementById('name');
   let country = document.getElementById('country');
+  let rep = document.getElementById('report');
   //or use the function() { ... } syntax
   xhr.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
@@ -178,6 +191,13 @@ console.log(url);
         cityName += theArray.name;
         //message += theArray.cod + "<br><br>";
       //}//end for
+        if (theArray.main.temp < 52){
+          reprt = "Relatively Bad Weather";
+        }
+            else {
+              reprt = "Relatively Good Weather";
+            }
+
       country.innerHTML = ctryName;
       name.innerHTML = cityName;
       weatherMain.innerHTML = wthrMain;
@@ -186,6 +206,7 @@ console.log(url);
       feelsLike.innerHTML = flslk;
       pressure.innerHTML = prssr;
       humidity.innerHTML = humid;
+      report.innerHTML = reprt;
     }
   }//end xhr
   xhr.open("GET", url, true);
