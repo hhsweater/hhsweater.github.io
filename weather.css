@@ -3,11 +3,59 @@
 		}
 
     #btn_get_data{
-      opacity: 1;
+
     }
     #btn_get_data.changed{
       visibility: hidden;
     }
+
+		#hidethis{
+			opacity:1;
+		}
+		#hidethis.changed{
+			visibility: hidden;
+		}
+		#loading{
+			opacity:1;
+		}
+		#loading.changed{
+			visibility: hidden;
+		}
+		#latDesc{
+			opacity:1;
+			display: inline;
+		}
+		#latDesc.changed{
+			visibility: hidden;
+		}
+		#longDesc{
+			opacity:1;
+			display: inline;
+		}
+		#longDesc.changed{
+			visibility: hidden;
+		}
+		.container{
+			display: grid;
+			grid-template-areas:
+    		"header header"
+    		"menu content"
+    		"footer footer";
+			grid-template-columns: 3fr 3fr 3fr;
+		}
+		.container > div {
+			background-color: rgba(255, 255, 255, 0.8);
+  		padding: 10px;
+		}
+		.container > div.content{
+			grid-area: content;
+		}
+		div.menu {
+  		grid-area: menu;
+		}
+		.container > div.menu2 {
+  		grid-area: menu;
+		}
 		body{
 			background-image: url(assets/weather.JPG);
 			background-size: cover;
@@ -16,7 +64,12 @@
 			text-align:center;
 			columns:1;
 			padding:1em;
+			background-image: url(assets/starback.gif);
+			background-size: 500px 75px;
+			background-repeat: no-repeat;
+			background-position: center center;
 		}
+
 		.nav{
 			display:flex;
 			flex-direction:row;
@@ -55,7 +108,7 @@
 		footer{
 			background-image: linear-gradient(to top, #66a3ff, #99ccff);
 			text-align:center;
-			font-size:1.75em;
+			font-size:1.2em;
 			font-style:bold;
 			padding: 25em, 25em, 25em, 25em;
 			border: 5px outset grey;
@@ -73,6 +126,7 @@
 		}
 		h3{
 			text-align:center;
+			color: lightblue;
 		}
 
     .journalHdr{
@@ -80,7 +134,7 @@
       color: forestgreen;
     }
 		a:hover{
-			opacity: 0.6;
+			opacity: 1.0;
 		}
 		@media only screen and (max-width: 720px) {
   			body {
@@ -95,6 +149,7 @@
     color: blue;
     text-decoration: none;
     cursor: auto;
+		font-size: 24px;
     }
     .earth{
       height:77px;

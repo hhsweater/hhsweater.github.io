@@ -1,18 +1,69 @@
+//LOTS OF CHANGESTYLES BELOW
+
+function changeStyleLatDesc() {//changestyle to hide button after press
+  let myButt = document.getElementById('latDesc');
+  if(myButt.hasAttribute('class')) {
+    myButt.removeAttribute('class');
+}
+else{
+  myButt.setAttribute('class', 'changed');
+  }//end else
+}//end button changestyle
+
+function changeStyleLongDesc() {//changestyle to hide button after press
+  let myButt = document.getElementById('longDesc');
+  if(myButt.hasAttribute('class')) {
+    myButt.removeAttribute('class');
+}
+else{
+  myButt.setAttribute('class', 'changed');
+  }//end else
+}//end button changestyle
+
+//Handles mouseover and mouseout for Doll images
+function handleDollmouseover(x, image) {
+// x is equal to 1 when the page starts, then on mouseover it increments up to 2
+//then back to 1 on mouseout
+    if (x == 1){
+      image.src = 'assets/rainydoll.gif';
+    }
+    if (x == 2){
+      image.src = 'assets/snowydoll.gif';
+    }
+}
 
 
 function changeStyle() {//changestyle to hide button after press
   let myButt = document.getElementById('btn_get_data');
-
   if(myButt.hasAttribute('class')) {
     myButt.removeAttribute('class');
 }
-
 else{
   myButt.setAttribute('class', 'changed');
-}//end else
-}//end changestyle
+  }//end else
+}//end button changestyle
 
+function changeStyleDisclaimer() {//changestyle to hide "Must Allow Access" after press
+  let disclaim = document.getElementById('hidethis');
+  if(disclaim.hasAttribute('class')) {
+    disclaim.removeAttribute('class');
+}
+else{
+  disclaim.setAttribute('class', 'changed');
+  }//end else
+}//end disclaimer changestyle
 
+function changeStyleLoading() {//changestyle to hide loading wheel after press
+  let disclaim = document.getElementById('loading');
+  if(disclaim.hasAttribute('class')) {
+    disclaim.removeAttribute('class');
+}
+else{
+  disclaim.setAttribute('class', 'changed');
+  }//end else
+}//end disclaimer changestyle
+
+//LOTS OF CHANGESTYLES ABOVE
 
 var y = 1;
 function toggleShow() {//toggle descriptions
@@ -33,17 +84,22 @@ function toggleShow() {//toggle descriptions
 
 //geolocation start
   function getLocation() {
+    changeStyleLoading();
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(success, error);
       } else {
-          document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
-          document.getElementById("demo2").innerHTML = "Geolocation is not supported by this browser.";
+          document.getElementById("latter").innerHTML = "Geolocation is not supported by this browser.";
+          document.getElementById("longer").innerHTML = "Geolocation is not supported by this browser.";
       }
   }
 
   function success(position) {
-          document.getElementById("demo").innerHTML = position.coords.latitude;
-          document.getElementById("demo2").innerHTML = position.coords.longitude;
+          document.getElementById("latter").innerHTML = position.coords.latitude;
+          document.getElementById("longer").innerHTML = position.coords.longitude;
+          changeStyleDisclaimer();
+          changeStyleLoading();
+          changeStyleLatDesc();
+          changeStyleLongDesc();
   }
 
   function error() {
@@ -56,8 +112,8 @@ function toggleShow() {//toggle descriptions
 function handleButton1() {
   toggleShow();
   changeStyle();
-  let latt = document.getElementById("demo").innerHTML ;
-  let long = document.getElementById("demo2").innerHTML;
+  let latt = document.getElementById("latter").innerHTML ;
+  let long = document.getElementById("longer").innerHTML;
   let lat = latt;
   let lon = long;
   let appid = "9094bc84e430edac5c0aa47cbe1796e5"
@@ -87,12 +143,10 @@ console.log(url);
   let mainHumid = document.getElementById('humidity');
   let name = document.getElementById('name');
   let country = document.getElementById('country');
-  console.log('hi');
   //or use the function() { ... } syntax
   xhr.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
       let theArray = JSON.parse(xhr.response);
-      console.log('hi3');
       console.log(theArray);
         message += "<br>";
         //message += theArray.coord.lon + "<br>";
@@ -123,10 +177,7 @@ console.log(url);
         //message += theArray.id + "<br>";
         cityName += theArray.name;
         //message += theArray.cod + "<br><br>";
-        console.log('hi2');
       //}//end for
-
-      //theSpan.innerHTML = message;
       country.innerHTML = ctryName;
       name.innerHTML = cityName;
       weatherMain.innerHTML = wthrMain;
@@ -135,20 +186,20 @@ console.log(url);
       feelsLike.innerHTML = flslk;
       pressure.innerHTML = prssr;
       humidity.innerHTML = humid;
-
     }
   }//end xhr
-
   xhr.open("GET", url, true);
   xhr.send();
 }//end handleButton1
-
 
 
 function start() {
   let btn1 = document.getElementById('btn_get_data');
   btn1.addEventListener('click', handleButton1);
   toggleShow();
+  changeStyleLoading();
+  changeStyleLatDesc();
+  changeStyleLongDesc();
 }//end start
 
 

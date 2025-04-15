@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="worker-src blob:; 
-      child-src blob: gap:;
-      img-src 'self' blob: data:;
-      default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:" />
-    
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="weather.css">
     <script src="scripts/weather.js"></script>
@@ -14,30 +10,61 @@
   <body>
     <header>
     <h2>Jack's Weather Site</h2>
+
   </header>
 
-  <button onclick="getLocation()">Get Longitude and Latitude</button><label>(Must allow access first)</label>
+  <div class="menu">
 
-    <p id="demo"></p>
-    <p id="demo2"></p>
+  </div>
+<div class=container>
 
+  <div class=content>
+    <h2> Get The Current Weather Conditions For Your Area</h2>
+  <button onclick="getLocation()">Get Longitude and Latitude</button><label id=hidethis >(Must allow access first)</label>
+  <img id=loading src="assets/loadingWin7.gif">
+  <br>
+    <span id=longDesc> Your Longitude: </span> <span id="latter"></span><!-- P TO SHOW LATTITUDE -->
+    <br>
+    <span id=latDesc> Your Latitude: </span> <span id="longer"></span><!-- P TO SHOW LONGITUDE -->
+    <br>
     <button id="btn_get_data">Get Weather</button>
     <br>
   <div id=showhide>
-    <span id="output"></span>
     <p>Country: <label id="country"></label></p>
     <p>City: <label id="name"></label></p>
-    <p>The Current Conditions: <label id="weatherMain"></label> , with <label id="weatherDesc"></label> </p>
-    <p>The Temperature is: <label id="temp"></label> Degrees Fahrenheit </p>
-    <p>Feels Like: <label id="feelsLike"></label></p>
-    <p>Pressure: <label id="pressure"></label></p>
-    <p>Humidity: <label id="humidity"></label></p>
-  </div>
+    <p>The Temperature is: <label id="temp"></label> ℉ </p>
+    <p>Feels Like: <label id="feelsLike"></label> ℉ </p>
+    <p>The Current Conditions: <label id="weatherMain"></label>, with <label id="weatherDesc"></label> </p>
+    <p>Pressure: <label id="pressure"></label> Millibars</p>
+    <p>Humidity: <label id="humidity"></label>%</p>
+  </div><!-- SHOWHIDE DIV -->
+</div><!-- CONTENT DIV -->
+</div><!-- CONTAINER DIV -->
 
+<h3>
+  Hover Me!
+  <br>
+    <a href="assets/snowydoll.gif"><!-- FOR IMGSWAP -->
+        <img id=imgSwapGif src="assets/rainydoll.gif" onmouseover="handleDollmouseover(2,this)"
+        onmouseout="handleDollmouseover(1,this)">
+    </a><!-- FOR IMGSWAP END -->
+</h3>
 
-
+<article>
+  This website Geolocates the user ( if permitted )
+  <br>
+  Then it asks the weather API to get the weather for the current coordinates
+  <br>
+  Finally, it formats the data and returns it to the specified fields in HTML
+</article>
 
     <br>
-
+    <footer>
+      <a href="https://openweathermap.org/">Weather API from OpenWeatherMap</a>
+      <br>
+      <a href="https://gifcities.org/">Gifs from GifCities</a>
+      <br>
+      Jack Stuart 2025
+    </footer>
   </body>
   </html>
