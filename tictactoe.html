@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+
+    <style>
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .container img {
+      width: 100%;
+      height: auto;
+    }
+
+      table, th, td{
+        border: 1px solid black;
+        width: 150px;
+        height: 100px;
+        padding: 0px;
+      }
+
+      .tr1{
+
+      }
+      .th1{
+
+      }
+      .tr2{
+
+      }
+      .th2{
+
+      }
+      .tr3{
+
+      }
+      .th3{
+
+      }
+
+      #info{
+        border:5px solid blue;
+        background-color:lightblue;
+        text-align:center;
+        width:500px;
+        height:125px;
+        font-size:35px;
+        margin-top:15px;
+
+      }
+      h2{
+        margin-left:200px;
+        margin-right:200px;
+        display: inline-block;
+        padding: 0;
+        float: right;
+        width: 70%;
+        height: 0px;
+
+      }
+      .myButt{
+        background: transparent;
+        border: none !important;
+        font-size: 0;
+      }
+      .myButt.changed{
+        font-size: 50;
+      }
+      #myButt{
+        font-size: 50;
+      }
+
+      .myButt2{
+        background: transparent;
+        border: none !important;
+        font-size: 0;
+      }
+      .myButt2.changed{
+        font-size: 50;
+      }
+      #myButt2{
+        font-size: 50;
+      }
+
+      .myButt3{
+        background: transparent;
+        border: none !important;
+        font-size: 0;
+      }
+      .myButt3.changed{
+        font-size: 50;
+      }
+      #myButt3{
+        font-size: 50;
+      }
+
+      h3{
+        font-weight: 500;
+        color:#130f40;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+      }
+
+        .frame{
+          margin-left:200px;
+          margin-right:200px;
+          position: relative;
+          top:200px;
+          display: flex;
+          padding: 0;
+          float: right;
+          width: 70%;
+          height: 0px;
+        gap: 3px;
+      }
+
+      #minutesLabel,
+      #secondsLabel,
+      #colon{
+      width: 50px;
+      height: 50px;
+      font-size: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #eb4d4b;
+      font-family: 'Digital-7';
+      }
+      .colon{
+      width: 10px;
+      height: 50px;
+      }
+      .void{
+
+      }
+
+
+
+    </style>
+
+    <script src="tictactoe.js"> </script>
+  </head>
+  <body>
+    <h2>
+      <input type="button" onclick="startGame()" value="Start Game">
+      <br>
+      <input type="button" class="myButt2" id="myButt2"  onclick="resetGame()" value="Reset">
+      <br>
+      <input type="button" onclick="vsComp()"  value="Start VS Computer">
+      <br>
+      <input type="button" class="myButt3" id="myButt3"  onclick="compTurn()"  value="Next Computer Turn">
+      <br>
+      <input type="button" onclick="vsHuman()" value="Start VS Human">
+      <br>
+      <input type="button" class="myButt" id="myButt"  onclick="resetGame()" value="Play Again?">
+    </h2>
+    <h3>
+
+
+      <div class="frame">
+              <label class="" id="minutes">00</label>:<label class=""  id="seconds">00</label>
+      </div>
+
+
+
+    </h3>
+    <table>
+      <tr class="tr1">
+        <th class="th1">
+
+              <img class="image" id="swap" src="images/blank.png" onclick="click1()">
+          </th>
+        <th class="th1">
+
+              <img class="image" id="swap2" src="images/blank.png" onclick="click2()">
+          </th>
+        <th class="th1">
+
+              <img class="image" id="swap3" src="images/blank.png" onclick="click3()">
+          </th>
+      </tr>
+      <tr class="tr2">
+        <th class="th2">
+
+              <img class="image" id="swap4" src="images/blank.png" onclick="click4()">
+          </th>
+        <th class="th2">
+
+              <img class="image" id="swap5" src="images/blank.png" onclick="click5()">
+          </th>
+        <th class="th2">
+
+              <img class="image" id="swap6" src="images/blank.png" onclick="click6()">
+          </th>
+      </tr>
+      <tr class="tr3">
+        <th class="th3">
+
+              <img class="image" id="swap7" src="images/blank.png" onclick="click7()">
+          </th>
+        <th class="th3">
+
+              <img class="image" id="swap8" src="images/blank.png" onclick="click8()">
+          </th>
+        <th class="th3">
+
+              <img class="image" id="swap9" src="images/blank.png" onclick="click9()">
+          </th>
+      </tr>
+    </table>
+
+    <h1 id="info">
+      Click Start Game, or play against the Computer or a Friend!
+    </h1>
+
+
+
+
+
+
+  </body>
+</html>

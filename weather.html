@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="worker-src blob:; 
+      child-src blob: gap:;
+      img-src 'self' blob: data:;
+      default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:" />
+    
+
+    <link rel="stylesheet" href="weather.css">
+    <script src="scripts/weather.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <header>
+    <h2>Jack's Weather Site</h2>
+  </header>
+
+  <button onclick="getLocation()">Get Longitude and Latitude</button><label>(Must allow access first)</label>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <button id="btn_get_data">Get Weather</button>
+    <br>
+  <div id=showhide>
+    <span id="output"></span>
+    <p>Country: <label id="country"></label></p>
+    <p>City: <label id="name"></label></p>
+    <p>The Current Conditions: <label id="weatherMain"></label> , with <label id="weatherDesc"></label> </p>
+    <p>The Temperature is: <label id="temp"></label> Degrees Fahrenheit </p>
+    <p>Feels Like: <label id="feelsLike"></label></p>
+    <p>Pressure: <label id="pressure"></label></p>
+    <p>Humidity: <label id="humidity"></label></p>
+  </div>
+
+
+
+
+    <br>
+
+  </body>
+  </html>
