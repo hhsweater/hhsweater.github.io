@@ -20,7 +20,7 @@
 
   <div class=content>
     <h2> Get The Current Weather Conditions For Your Area</h2>
-  <button onclick="getLocation()">Get Longitude and Latitude</button><label id=hidethis >(Must allow access first)</label>
+  <button id=getLoLa onclick="getLocation()">Get Longitude and Latitude</button><label id=hidethis >(Must allow access first)</label>
   <img id=loading src="assets/loadingWin7.gif">
   <br>
     <span id=longDesc> Your Longitude: </span> <span id="latter"></span><!-- P TO SHOW LATTITUDE -->
@@ -37,6 +37,7 @@
     <p>The Current Conditions: <label id="weatherMain"></label>, with <label id="weatherDesc"></label> </p>
     <p>Pressure: <label id="pressure"></label> Millibars</p>
     <p>Humidity: <label id="humidity"></label>%</p>
+    <p>Now That's What I Call: <label id=report> </label> </p>
   </div><!-- SHOWHIDE DIV -->
 </div><!-- CONTENT DIV -->
 </div><!-- CONTAINER DIV -->
@@ -56,6 +57,9 @@
   Then it asks the weather API to get the weather for the current coordinates
   <br>
   Finally, it formats the data and returns it to the specified fields in HTML
+  <br>
+  <br>
+  <span class=italy> This website stores no user Geolocation data </span>
 </article>
 
     <br>
@@ -65,6 +69,10 @@
       <a href="https://gifcities.org/">Gifs from GifCities</a>
       <br>
       Jack Stuart 2025
+    </footer>
+  </body>
+  </html>
+
     </footer>
   </body>
   </html>
